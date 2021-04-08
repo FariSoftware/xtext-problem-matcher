@@ -1,8 +1,8 @@
 {
-  "name": "problem-matcher",
+  "name": "xtext-problem-matcher",
   "version": "1.0.0",
   "private": true,
-  "description": "Sets up a problem matcher to create annotations for violations",
+  "description": "Sets up a problem matcher to create annotations for xtext validation errors",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -13,15 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xt0rted/problem-matcher.git"
+    "url": "git+https://github.com/FariSoftware/xtext-problem-matcher.git"
   },
   "keywords": [
     "actions",
     "github",
     "problem-matcher",
-    "annotations"
+    "annotations",
+    "xtext"
   ],
-  "author": "xt0rted",
+  "author": "FariSoftware",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6"
