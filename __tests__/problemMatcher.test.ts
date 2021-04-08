@@ -30,7 +30,7 @@ describe("problemMatcher", () => {
     });
 
     it("matches violations", () => {
-      expect(results.length).toEqual(3);
+      expect(results.length).toEqual(1);
     });
 
     it("matches violation details", () => {
