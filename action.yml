@@ -1,8 +1,8 @@
-name: "Problem Matcher"
+name: "XText Problem Matcher"
 
 description: "Sets up a problem matcher that's used to create annotations for violations"
 
-author: "xt0rted"
+author: "FariSoftware"
 
 branding:
   icon: "command"
