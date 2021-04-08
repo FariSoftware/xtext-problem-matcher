@@ -1,0 +1,17 @@
+{
+  "problemMatcher": [
+    {
+      "owner": "xtext-validate",
+      "pattern": [
+        {
+          "regexp": "^(.*):(.*)\\s\\((.*)\\sline\\s:\\s(\\d+)\\scolumn\\s:\\s(\\d+).*\\)$",
+          "severity": 1,
+          "message": 2,
+          "file": 3,
+          "line": 4,
+          "column": 5
+        }
+      ]
+    }
+  ]
+}
