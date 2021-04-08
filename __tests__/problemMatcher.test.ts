@@ -15,9 +15,7 @@ describe("problemMatcher", () => {
 
   describe("pattern", () => {
     const reportOutput = [
-      "README.md:12:81 MD013/line-length Line length [Expected: 80; Actual: 149]",
-      "docs/README.md:21:81 MD013/line-length Line length [Expected: 80; Actual: 119]",
-      "docs/README.md:14 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]",
+      "ERROR:no viable alternative (file:/C:/actions-runners/blah.xtext line : 5 column : 12)",
     ];
 
     let pattern: ProblemPattern;
@@ -36,27 +34,11 @@ describe("problemMatcher", () => {
     });
 
     it("matches violation details", () => {
-      expect(results[0][pattern.file]).toEqual("README.md");
-      expect(results[0][pattern.line]).toEqual("12");
-      expect(results[0][pattern.column]).toEqual("81");
-      expect(results[0][pattern.code]).toEqual("MD013/line-length");
-      expect(results[0][pattern.message]).toEqual("Line length [Expected: 80; Actual: 149]");
-    });
-
-    it("matches violation details in sub folder", () => {
-      expect(results[1][pattern.file]).toEqual("docs/README.md");
-      expect(results[1][pattern.line]).toEqual("21");
-      expect(results[1][pattern.column]).toEqual("81");
-      expect(results[1][pattern.code]).toEqual("MD013/line-length");
-      expect(results[1][pattern.message]).toEqual("Line length [Expected: 80; Actual: 119]");
-    });
-
-    it("matches violation details without column", () => {
-      expect(results[2][pattern.file]).toEqual("docs/README.md");
-      expect(results[2][pattern.line]).toEqual("14");
-      expect(results[2][pattern.column]).toBeUndefined();
-      expect(results[2][pattern.code]).toEqual("MD012/no-multiple-blanks");
-      expect(results[2][pattern.message]).toEqual("Multiple consecutive blank lines [Expected: 1; Actual: 2]");
+      expect(results[0][pattern.file]).toEqual("file:/C:/actions-runners/blah.xtext");
+      expect(results[0][pattern.line]).toEqual("5");
+      expect(results[0][pattern.column]).toEqual("12");
+      expect(results[0][pattern.severity]).toEqual("ERROR");
+      expect(results[0][pattern.message]).toEqual("no viable alternative");
     });
   });
 });
