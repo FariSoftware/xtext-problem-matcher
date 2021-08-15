@@ -29,7 +29,7 @@
     "@vercel/ncc": "^0.28.5"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.22",
+    "@types/jest": "^26.0.24",
     "@types/node": "^15.6.0",
     "@zeit/ncc": "^0.22.3",
     "github-actions-problem-matcher-typings": "^1.1.0",
