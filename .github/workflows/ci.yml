@@ -6,17 +6,25 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FORCE_COLOR: 3
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        node: [12, 13]
+        node: [16, 17]
 
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3.1.0
 
       - name: Install Node
         uses: actions/setup-node@v3.5.1
@@ -27,6 +35,8 @@ jobs:
 
       - run: npm run lint
 
+      - run: npm run build
+
       - run: npm test
 
-      - run: npm run build
+      - run: npm run package

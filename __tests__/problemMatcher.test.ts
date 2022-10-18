@@ -1,6 +1,9 @@
 import { matchResults } from "../__helpers__/utils";
 import { problemMatcher as problemMatcherJson } from "../.github/problem-matcher.json";
-import { ProblemMatcher, ProblemPattern } from "github-actions-problem-matcher-typings";
+import {
+  ProblemMatcher,
+  ProblemPattern,
+} from "github-actions-problem-matcher-typings";
 
 const problemMatcher: ProblemMatcher = problemMatcherJson[0];
 
@@ -34,7 +37,9 @@ describe("problemMatcher", () => {
     });
 
     it("matches violation details", () => {
-      expect(results[0][pattern.file]).toEqual("file:/C:/actions-runners/blah.xtext");
+      expect(results[0][pattern.file]).toEqual(
+        "file:/C:/actions-runners/blah.xtext"
+      );
       expect(results[0][pattern.line]).toEqual("5");
       expect(results[0][pattern.column]).toEqual("12");
       expect(results[0][pattern.severity]).toEqual("ERROR");
