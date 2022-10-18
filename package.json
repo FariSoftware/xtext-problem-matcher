@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@vercel/ncc": "^0.29.1"
+    "@vercel/ncc": "^0.34.0"
   },
   "devDependencies": {
     "@types/jest": "^27.5.0",
