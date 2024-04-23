@@ -1,6 +1,6 @@
 import { matchResults } from "../__helpers__/utils";
 import { problemMatcher as problemMatcherJson } from "../.github/problem-matcher.json";
-import {
+import type {
   ProblemMatcher,
   ProblemPattern,
 } from "github-actions-problem-matcher-typings";
